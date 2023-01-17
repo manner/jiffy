@@ -1,14 +1,14 @@
 include(CMakeDependentOption)
 
 # Components to build
-option(BUILD_TESTS "Build with unittests" ON)
+option(BUILD_TESTS "Build with unittests" OFF)
 option(BUILD_DOC "Build documentation" OFF)
 option(BUILD_STORAGE "Build storage service" ON)
 option(BUILD_DIRECTORY "Build directory service" ON)
 option(BUILD_CPP_CLIENT "Build C++ client" ON)
-option(BUILD_PYTHON_CLIENT "Build Python Client" ON)
-option(BUILD_JAVA_CLIENT "Build Java Client" ON)
-option(BUILD_MEMKIND_SUPPORT "Build support for memkind" ON)
+option(BUILD_PYTHON_CLIENT "Build Python Client" OFF)
+option(BUILD_JAVA_CLIENT "Build Java Client" OFF)
+option(BUILD_MEMKIND_SUPPORT "Build support for memkind" OFF)
 option(BUILD_S3_SUPPORT "Build support for S3 as external store" OFF)
 option(USE_SYSTEM_BOOST "Use system boost libraries" ON)
 option(USE_SYSTEM_THRIFT "Use system thrift library" ON)

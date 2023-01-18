@@ -34,6 +34,7 @@ if (BUILD_TESTS)
 endif ()
 
 add_subdirectory(libjiffy)
+add_subdirectory(example)
 
 if (BUILD_DIRECTORY)
   add_subdirectory(directory)

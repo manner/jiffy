@@ -214,6 +214,8 @@ void file_partition::run_command(response &_return, const arg_list &args) {
       break;
     case file_cmd_id::file_get_storage_capacity:get_storage_capacity(_return, args);
       break;
+    case file_cmd_id::file_get_partition_size:get_partition_size(_return, args);
+      break;
     default: {
       _return.emplace_back("!no_such_command");
       return;

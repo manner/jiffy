@@ -1,21 +1,20 @@
 #ifndef JIFFY_FILE_SERVICE_SHARD_H
 #define JIFFY_FILE_SERVICE_SHARD_H
 
-#include <string>
-#include <jiffy/utils/property_map.h>
 #include "../serde/serde_all.h"
-#include "jiffy/storage/partition.h"
-#include "jiffy/persistent/persistent_service.h"
-#include "jiffy/storage/chain_module.h"
 #include "file_defs.h"
 #include "jiffy/directory/directory_ops.h"
+#include "jiffy/persistent/persistent_service.h"
+#include "jiffy/storage/chain_module.h"
+#include "jiffy/storage/partition.h"
+#include <jiffy/utils/property_map.h>
+#include <string>
 
 namespace jiffy {
 namespace storage {
 
 class file_partition : public chain_module {
- public:
-
+public:
   /**
    * @brief Constructor
    * @param manager Block memory manager
@@ -103,6 +102,13 @@ class file_partition : public chain_module {
   void get_storage_capacity(response &_return, const arg_list &args);
 
   /**
+   * @brief Get size of the partition
+   * @param _return Response
+   * @param args Arguments
+   */
+  void get_partition_size(response &_return, const arg_list &args);
+
+  /**
    * @brief Run command on file partition
    * @param _return Response
    * @param args Arguments
@@ -140,8 +146,7 @@ class file_partition : public chain_module {
    */
   void forward_all() override;
 
- private:
-
+private:
   /* File partition */
   file_type partition_;
 
@@ -150,7 +155,7 @@ class file_partition : public chain_module {
 
   /* Name of format, either binary or csv */
   std::string ser_name_;
-  
+
   /* Bool for partition slot range splitting */
   bool scaling_up_;
 
@@ -170,10 +175,9 @@ class file_partition : public chain_module {
   int auto_scaling_port_;
 
   std::vector<std::string> allocated_blocks_;
-
 };
 
-}
-}
+} // namespace storage
+} // namespace jiffy
 
-#endif //JIFFY_FILE_SERVICE_SHARD_H
+#endif // JIFFY_FILE_SERVICE_SHARD_H

@@ -22,7 +22,8 @@ enum file_cmd_id : uint32_t {
   file_clear = 4,
   file_update_partition = 5,
   file_add_blocks = 6,
-  file_get_storage_capacity = 7
+  file_get_storage_capacity = 7,
+  file_get_partition_size = 8,
 };
 
 }

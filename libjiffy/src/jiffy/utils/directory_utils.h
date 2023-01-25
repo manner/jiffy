@@ -7,6 +7,7 @@
 #include <vector>
 #include <fstream>
 #include <regex>
+#include <cstring>
 
 namespace jiffy {
 namespace utils {

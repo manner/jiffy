@@ -5,7 +5,7 @@ endif ()
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../libjiffy/src
         ${CMAKE_CURRENT_SOURCE_DIR}/../thirdparty/libcuckoo
         ${Boost_INCLUDE_DIRS})
-add_executable(directoryd src/directory_server.cpp)
+add_executable(directoryd ${CMAKE_CURRENT_SOURCE_DIR}/src/directory_server.cpp)
 
 add_dependencies(directoryd boost_ep ${HEAP_MANAGER_EP} thrift_ep)
 

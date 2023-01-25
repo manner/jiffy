@@ -46,7 +46,8 @@ if (JEMALLOC_BUILD)
           LOG_DOWNLOAD ON
           LOG_CONFIGURE ON
           LOG_BUILD ON
-          LOG_INSTALL ON)
+          LOG_INSTALL ON
+          BUILD_BYPRODUCTS ${JEMALLOC_PREFIX}/lib/libjemalloc.a)
 endif ()
 
 include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIR})

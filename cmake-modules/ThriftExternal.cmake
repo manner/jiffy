@@ -6,7 +6,7 @@
 #  - THRIFT_INCLUDE_DIR
 #  - THRIFT_LIBRARY
 
-set(THRIFT_VERSION "0.12.0")
+set(THRIFT_VERSION "0.17.0")
 set(THRIFT_BUILD ON)
 
 if ((DEFINED ENV{THRIFT_ROOT} AND EXISTS $ENV{THRIFT_ROOT}))
@@ -54,6 +54,7 @@ if (THRIFT_BUILD)
           "-DWITH_LIBEVENT=ON"
           "-DWITH_ZLIB=OFF"
           "-DWITH_JAVA=OFF"
+          "-DWITH_JAVASCRIPT=OFF"
           "-DWITH_PYTHON=OFF"
           "-DWITH_CPP=ON"
           "-DWITH_STDTHREADS=OFF"
@@ -82,7 +83,9 @@ if (THRIFT_BUILD)
           LOG_DOWNLOAD ON
           LOG_CONFIGURE ON
           LOG_BUILD ON
-          LOG_INSTALL ON)
+          LOG_INSTALL ON
+          BUILD_BYPRODUCTS ${THRIFT_PREFIX}/lib/libthrift.a
+          BUILD_BYPRODUCTS ${THRIFT_PREFIX}/lib/libthriftnb.a)
 endif ()
 
 include_directories(SYSTEM ${THRIFT_INCLUDE_DIR})
